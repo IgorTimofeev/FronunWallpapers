@@ -16,18 +16,15 @@ local w = "Обои"
 local ll = "Fronun"
 
 
--- Окно
-local mainContainer, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 120, 35)) -- окно
-
-
-
-
+-- очко
+--local mainContainer, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 120, 35)) -- окно
+local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 135, 35, "Wallpapers "..version, true))
 
 
 -- а вот его тело
 window:addChild(GUI.label(98, 35, window.width, window.height, 0x878787, "Сервер: "..server))
 --window:addChild(GUI.label(7, 1, window.width, window.height, 0xB4B4B4, "vk.com/"..vk))
-window:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "Wallpapers version "..version)):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
+--window:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "Wallpapers version "..version)):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
 window:addChild(GUI.label(5, 4, window.width, window.height, 0x5A5A5A, w.." "))
 window:addChild(GUI.label(5, 5, window.width, window.height, 0x5A5A5A, "t.a.t.u")) -- нас не догонят
 window:addChild(GUI.label(2, 35, window.width, window.height, 0x5A5A5A, "Автор: "..ll)) 
@@ -359,9 +356,9 @@ computer=require("computer") computer.beep()
  
  ---------------------------------
  
- window:addChild(GUI.label(77, 12, window.width, window.height, 0x5A5A5A, w.." winter"))
-  window:addChild(GUI.label(77, 13, window.width, window.height, 0x5A5A5A, "fun"))
-  window:addChild(GUI.framedButton(77, 13, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(75, 12, window.width, window.height, 0x5A5A5A, w.." winter"))
+  window:addChild(GUI.label(79, 13, window.width, window.height, 0x5A5A5A, "fun"))
+  window:addChild(GUI.framedButton(77, 14, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
    loadfile("/bin/wget.lua")(Host.."winter_fun.pic", "/MineOS/Pictures/winter_fun.pic", "-FQ")
@@ -542,8 +539,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(88, 11, window.width, window.height, 0x5A5A5A, w.." Ryazan")) 
- window:addChild(GUI.framedButton(89, 12, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(88, 9, window.width, window.height, 0x5A5A5A, w.." Ryazan")) 
+ window:addChild(GUI.framedButton(89, 10, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -555,8 +552,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(88, 15, window.width, window.height, 0x5A5A5A, w.." Raspbery")) 
- window:addChild(GUI.framedButton(89, 16, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(86, 13, window.width, window.height, 0x5A5A5A, w.." Raspbery")) 
+ window:addChild(GUI.framedButton(89, 14, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -568,8 +565,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(88, 19, window.width, window.height, 0x5A5A5A, w.." Firefox")) 
- window:addChild(GUI.framedButton(89, 20, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(88, 17, window.width, window.height, 0x5A5A5A, w.." Firefox")) 
+ window:addChild(GUI.framedButton(89, 18, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -581,8 +578,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(88, 23, window.width, window.height, 0x5A5A5A, w.." Scrimer")) 
- window:addChild(GUI.framedButton(89, 24, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "тсс..")).onTouch = function()
+ window:addChild(GUI.label(88, 21, window.width, window.height, 0x5A5A5A, w.." Scrimer")) 
+ window:addChild(GUI.framedButton(89, 22, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "тсс..")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -594,8 +591,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(88, 27, window.width, window.height, 0x5A5A5A, w.." Lox")) 
- window:addChild(GUI.framedButton(89, 28, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(88, 25, window.width, window.height, 0x5A5A5A, w.." Lox")) 
+ window:addChild(GUI.framedButton(89, 26, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -607,8 +604,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
-  window:addChild(GUI.label(88, 31, window.width, window.height, 0x5A5A5A, w.." Anime")) 
- window:addChild(GUI.framedButton(89, 32, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+  window:addChild(GUI.label(88, 29, window.width, window.height, 0x5A5A5A, w.." Anime")) 
+ window:addChild(GUI.framedButton(89, 30, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -620,7 +617,8 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
-  window:addChild(GUI.label(100, 5, window.width, window.height, 0x5A5A5A, w.." seashell")) 
+  window:addChild(GUI.label(100, 4, window.width, window.height, 0x5A5A5A, w.." sea")) 
+  window:addChild(GUI.label(100, 5, window.width, window.height, 0x5A5A5A, "shell"))
  window:addChild(GUI.framedButton(100, 6, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
@@ -633,8 +631,9 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(100, 12, window.width, window.height, 0x5A5A5A, w.." Ice haze")) 
- window:addChild(GUI.framedButton(100, 13, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(100, 9, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(100, 10, window.width, window.height, 0x5A5A5A, "Ice haze"))
+ window:addChild(GUI.framedButton(100, 11, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -646,8 +645,9 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(100, 16, window.width, window.height, 0x5A5A5A, w.." Sea wave")) 
- window:addChild(GUI.framedButton(100, 17, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(100, 14, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(100, 15, window.width, window.height, 0x5A5A5A, "Sea wave"))
+ window:addChild(GUI.framedButton(100, 16, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -659,8 +659,9 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
- window:addChild(GUI.label(100, 21, window.width, window.height, 0x5A5A5A, w.." 3D cat")) 
- window:addChild(GUI.framedButton(100, 22, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+ window:addChild(GUI.label(101, 19, window.width, window.height, 0x5A5A5A, w.." "))
+ window:addChild(GUI.label(101, 20, window.width, window.height, 0x5A5A5A, "3D CAT")) 
+ window:addChild(GUI.framedButton(100, 21, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -672,8 +673,9 @@ computer=require("computer") computer.beep()
  
  -------------------------------
  
-  window:addChild(GUI.label(100, 26, window.width, window.height, 0x5A5A5A, w.." Github")) 
- window:addChild(GUI.framedButton(100, 27, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+  window:addChild(GUI.label(100, 24, window.width, window.height, 0x5A5A5A, w.." ")) 
+  window:addChild(GUI.label(100, 25, window.width, window.height, 0x5A5A5A, "GitHub"))
+ window:addChild(GUI.framedButton(100, 26, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
   os.sleep(1.000)
@@ -681,6 +683,61 @@ computer=require("computer") computer.beep()
   computer=require("computer") computer.beep() 
   computer=require("computer") computer.beep() 
    GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете Github.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(100, 29, window.width, window.height, 0x5A5A5A, w.." Lake"))
+ window:addChild(GUI.label(102, 30, window.width, window.height, 0x5A5A5A, "forest")) 
+ window:addChild(GUI.framedButton(100, 31, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."lake_forest_mountains.pic", "/MineOS/Pictures/lake_forest_mountains.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете lake_forest_mountains.pic.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 4, window.width, window.height, 0x5A5A5A, w.." Nvidia")) 
+ window:addChild(GUI.framedButton(110, 5, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."Nvidia.pic", "/MineOS/Pictures/Nvidia.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете Nvidia.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 9, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(110, 10, window.width, window.height, 0x5A5A5A, "Navalny"))
+ window:addChild(GUI.framedButton(110, 11, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы вызвать наряд ФСБ, Настройки -> обои, выбираете Navalny.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 14, window.width, window.height, 0x5A5A5A, w.." wave")) 
+ window:addChild(GUI.label(110, 15, window.width, window.height, 0x5A5A5A, "in the ocean"))
+ window:addChild(GUI.framedButton(110, 16, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."wave_in_the_ocean.pic", "/MineOS/Pictures/wave_in_the_ocean.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете wave_in_the_ocean.pic ")
   end 
  
  -------------------------------
