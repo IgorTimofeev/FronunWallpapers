@@ -10,7 +10,7 @@ local srl = require("serialization") -- версия прогги
 
 local server = "Guild-BT (Sotq)" -- это не реклама просто я сам играю на таком сервере)
 local vk = "группа_не_найдена"
-local version = "1.17" -- здесь пишется версия.
+local version = "1.19" -- здесь пишется версия.
 local Host = "https://github.com/Fronun/Wallpapers/raw/master/wall/" -- да да, теперь все это дело на гитхабе (порн хаб)
 local w = "Обои"
 local ll = "Fronun"
