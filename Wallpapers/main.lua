@@ -715,7 +715,7 @@ computer=require("computer") computer.beep()
  -------------------------------
  
  window:addChild(GUI.label(110, 9, window.width, window.height, 0x5A5A5A, w.." ")) 
- window:addChild(GUI.label(110, 10, window.width, window.height, 0x5A5A5A, "Navalny"))
+ window:addChild(GUI.label(110, 10, window.width, window.height, 0x5A5A5A, "Navalny")) --Навальный заебал блять, в рекламе ютуба сука, минтинг завтра сука в Сургуте.
  window:addChild(GUI.framedButton(110, 11, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
 
   GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
