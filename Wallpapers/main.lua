@@ -10,7 +10,7 @@ local srl = require("serialization") -- версия прогги
 
 local server = "Guild-BT (Sotq)" -- это не реклама просто я сам играю на таком сервере)
 local vk = "группа_не_найдена"
-local version = "1.19" -- здесь пишется версия.
+local version = "1.20" -- здесь пишется версия.
 local Host = "https://github.com/Fronun/Wallpapers/raw/master/wall/" -- да да, теперь все это дело на гитхабе (порн хаб)
 local w = "Обои"
 local ll = "Fronun"
@@ -740,6 +740,53 @@ computer=require("computer") computer.beep()
    GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете wave_in_the_ocean.pic ")
   end 
  
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 19, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(110, 20, window.width, window.height, 0x5A5A5A, "Strawberry"))
+ window:addChild(GUI.label(110, 21, window.width, window.height, 0x5A5A5A, "cocktail"))
+ window:addChild(GUI.framedButton(110, 22, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."Strawberry_cocktail.pic", "/MineOS/Pictures/Strawberry_cocktail.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете Strawberry_cocktail.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 25, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(110, 26, window.width, window.height, 0x5A5A5A, "Matrix"))
+ window:addChild(GUI.framedButton(110, 27, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."Matrix.pic", "/MineOS/Pictures/Matrix.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете Matrix.pic ")
+  end 
+ 
+ -------------------------------
+ 
+ window:addChild(GUI.label(110, 30, window.width, window.height, 0x5A5A5A, w.." ")) 
+ window:addChild(GUI.label(110, 31, window.width, window.height, 0x5A5A5A, "Intel"))
+ window:addChild(GUI.framedButton(110, 32, 9, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Скачать")).onTouch = function()
+
+  GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
+  os.sleep(1.000)
+   loadfile("/bin/wget.lua")(Host.."Intel_Inside.pic", "/MineOS/Pictures/Intel_Inside.pic", "-FQ")
+  computer=require("computer") computer.beep() 
+  computer=require("computer") computer.beep() 
+   GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете Intel_Inside.pic ")
+  end 
+ 
+ -------------------------------
+
+
+
  -------------------------------
 
   mainContainer:drawOnScreen()
