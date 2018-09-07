@@ -66,7 +66,7 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local window3 = mainContainer:addChild(GUI.titledWindow(50, 22, 60, 20, "Wallpapers", true))
+local window = mainContainer:addChild(GUI.titledWindow(50, 22, 70, 30, "Wallpapers", true))
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
