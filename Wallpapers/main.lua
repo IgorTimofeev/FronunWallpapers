@@ -65,23 +65,22 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local window = mainContainer:addChild(GUI.titledWindow(50, 22, 70, 30, "Wallpapers", true))
-local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Wallpapers", true))
+local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 60, 35, "Wallpapers", true))
+
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
 	window:addChild(GUI.text(x, y, 0x5A5A5A, string.limit(pictures[i], width)))
-	window:addChild(GUI.framedButton(x, y + 1, width, 3, 0xE1E1E1, 0xE1E1E1, 0x880000, 0x880000, "Download")).onTouch = function()
+	window:addChild(GUI.framedButton(x, y + 1, width, 3, 0x5A5A5A, 0x5A5A5A, 0x880000, 0x880000, "Download")).onTouch = function()
 		local file = pictures[i] .. ".pic"
 		
-		GUI.alert("do not remove the Internet map during downloads, it will take 1 second.")
+		GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
 		loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-		GUI.alert("Download complete! To put on your desktop, Settings - > Wallpaper, choose " .. file)
+		GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете " .. file)
 	end
 
 	x = x + width + horizontalSpace
 	if x + width > window.width then
 		x, y = 3, y + verticalSpace + 4
-
 	end
 end
 
