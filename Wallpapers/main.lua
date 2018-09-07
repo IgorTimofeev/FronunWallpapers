@@ -65,7 +65,7 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 60, 35, "Wallpapers", true))
+local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 60, 50, "Wallpapers", true))
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
