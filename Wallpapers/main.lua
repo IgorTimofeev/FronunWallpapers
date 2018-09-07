@@ -66,7 +66,7 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local window = window:addChild(GUI.container(1, 1, 1, 23))
+local weatherContainer = window:addChild(GUI.container(1, 1, 1, 23))
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 120, 35, 0))
 window.backgroundPanel.colors.transparency = 0.2
 
