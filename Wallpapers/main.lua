@@ -70,6 +70,8 @@ local weatherContainer = window:addChild(GUI.container(1, 1, 1, 23))
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 120, 35, 0))
 window.backgroundPanel.colors.transparency = 0.2
 
+WeatherContainer:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "костыль ")):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
+
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
 	window:addChild(GUI.text(x, y, 0x5A5A5A, string.limit(pictures[i], width)))
@@ -84,7 +86,7 @@ for i = 1, #pictures do
 	x = x + width + horizontalSpace
 	if x + width > window.width then
 		x, y = 3, y + verticalSpace + 4
-WeatherContainer:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "костыль "..version)):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
+
 	end
 end
 
