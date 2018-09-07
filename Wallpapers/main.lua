@@ -84,6 +84,7 @@ for i = 1, #pictures do
 	x = x + width + horizontalSpace
 	if x + width > window.width then
 		x, y = 3, y + verticalSpace + 4
+WeatherContainer:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "костыль "..version)):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
 	end
 end
 
