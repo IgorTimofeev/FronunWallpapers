@@ -66,7 +66,7 @@ local pictures = {
 }
 
 local window = mainContainer:addChild(GUI.titledWindow(50, 22, 70, 30, "Wallpapers", true))
-
+local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Wallpapers", true))
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
 	window:addChild(GUI.text(x, y, 0x5A5A5A, string.limit(pictures[i], width)))
