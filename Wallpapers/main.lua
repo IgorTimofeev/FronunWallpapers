@@ -3,7 +3,6 @@
 
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.22"
 
 local pictures = {
 	"Tatu",
