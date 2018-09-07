@@ -66,11 +66,7 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local weatherContainer = window:addChild(GUI.container(1, 1, 1, 23))
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 120, 35, 0))
-window.backgroundPanel.colors.transparency = 0.2
-
-WeatherContainer:addChild(GUI.label(2, 3, window.width, window.height, 0xD2D2D2, "костыль ")):setAlignment(GUI.ALIGNMENT_HORIZONTAL_CENTER, GUI.ALIGNMENT_VERTICAL_TOP) 
+local window3 = mainContainer:addChild(GUI.titledWindow(50, 22, 60, 20, "Wallpapers", true))
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
