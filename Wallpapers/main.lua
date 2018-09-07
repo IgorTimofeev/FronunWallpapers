@@ -1,5 +1,5 @@
 --Спасибо ECS, что показал что можно было сделать таблицу, да и открыл глаза, в планах все таки дофига что хочу сделать...
---Фронун 13 лет.....
+.
 
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
