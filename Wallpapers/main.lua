@@ -66,14 +66,14 @@ local pictures = {
 	"Intel_Inside",
 }
 
-local weatherContainer = window:addChild(GUI.container(1, 1, 1, 23))
+local window = window:addChild(GUI.container(1, 1, 1, 23))
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 120, 35, 0))
 window.backgroundPanel.colors.transparency = 0.2
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
 	window:addChild(GUI.text(x, y, 0x5A5A5A, string.limit(pictures[i], width)))
-	window:addChild(GUI.framedButton(x, y + 1, width, 3, 0xE1E1E1, 0xE1E1E1, 0x880000, 0x880000, "Скачать")).onTouch = function()
+	window:addChild(GUI.framedButton(x, y + 1, width, 3, 0xE1E1E1, 0xE1E1E1, 0x880000, 0x880000, "Download")).onTouch = function()
 		local file = pictures[i] .. ".pic"
 		
 		GUI.alert("do not remove the Internet map during downloads, it will take 1 second.")
