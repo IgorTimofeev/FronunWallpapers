@@ -1,1 +1,1 @@
-print("lol, lua")
+require("shell").execute("OS")
