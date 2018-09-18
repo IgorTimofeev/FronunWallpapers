@@ -63,6 +63,7 @@ local pictures = {
 	"Strawberry_cocktail",
 	"Matrix",
 	"Intel_Inside",
+	"Rammstein",
 }
 
 local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 135, 35, "Wallpapers", true))
@@ -75,7 +76,7 @@ for i = 1, #pictures do
 		
 		GUI.alert("не вынимайте, интернет карту во время скачиваний, это пройдет 1 секунды.")
 		loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-		GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Настройки -> обои, выбираете " .. file)
+		GUI.alert("Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете " .. file)
 	end
 
 	x = x + width + horizontalSpace
