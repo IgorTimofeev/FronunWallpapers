@@ -1,1 +1,0 @@
-require("shell").execute("OS")
