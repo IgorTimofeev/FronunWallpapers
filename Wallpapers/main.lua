@@ -68,17 +68,24 @@ local pictures = {
   "Yandex",
   "Cat",
   "Sea-Night",
+  "IMac",
+  "Mojave",
+  "Mojave_Night",
+  "yosemite",
 }
 
 --local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 135, 35, "Wallpapers", true))
 --local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 135, 35))
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 135, 35, 0))
+
+local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0))
 window.backgroundPanel.colors.transparency = 0.2
+--local progressIndicator = window:addChild(GUI.progressIndicator(140, 32, 0x1E1E1E, 0x990000, 0xFF0000))
 
 local menu = window:addChild(GUI.menu(1, 35, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
 
 
 window:addChild(GUI.text(65, 35, 0x5A5A5A, "Wallpapers "..Version))
+
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
@@ -87,16 +94,18 @@ for i = 1, #pictures do
     local file = pictures[i] .. ".pic"
     
     GUI.alert("Russian: не вынимайте, интернет карту во время скачиваний, это пройдет 3 секунды. \nEnglish: do not remove the internet map during downloads, it will take 3 seconds.")
+    -- progressIndicator.active = true
      
-      
+      mainContainer:drawOnScreen()
         loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
     GUI.alert("Russian: Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете " .. file, "\nEnglish: Loading is successfully! To put on your desktop, Settings -> wallpapers, choose " ..file)
-    
+  --  progressIndicator.active = false
   end
 
   x = x + width + horizontalSpace
   if x + width > window.width then
     x, y = 3, y + verticalSpace + 4
+
   end
 end
 
