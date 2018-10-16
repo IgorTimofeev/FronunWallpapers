@@ -1,18 +1,19 @@
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.05"
+local Version = "1.07"
 local MineOSCore = require("MineOSCore")
 
 local pictures = {
+  "Zemfira", -- хочешь, сладких апельсинов.
   "Tatu",
-  "Katya",
+  "Katya", --шлюха
   "WinterSunrise",
   "Nocturnal",
   "AhsokaTano",
   "Sea",
   "Sea-mountains",
   "Chester",
-  "linkin_park",
+  "linkin_park", -- говно
   "moscow",
   "Piter",
   "Nice_girl",
@@ -61,10 +62,10 @@ local pictures = {
   "Strawberry_cocktail",
   "Matrix",
   "Intel_Inside",
-  "Rammstein",
+  "Rammstein", -- ну, норм я ниче не могу сказать.
   "Google",
   "TED",
-  "Little_big",
+  "Little_big", -- скпибиди папапа бум бум айс.
   "Yandex",
   "Cat",
   "Sea-Night",
@@ -72,25 +73,22 @@ local pictures = {
   "Mojave",
   "Mojave_Night",
   "yosemite",
+  "Omen",
 }
 
---local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 135, 35, "Wallpapers", true))
+local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers "..Version, true))
 --local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 135, 35))
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0))
+--local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0))
 window.backgroundPanel.colors.transparency = 0.2
 --local progressIndicator = window:addChild(GUI.progressIndicator(140, 32, 0x1E1E1E, 0x990000, 0xFF0000))
 
-local menu = window:addChild(GUI.menu(1, 35, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
-
-
-window:addChild(GUI.text(65, 35, 0x5A5A5A, "Wallpapers "..Version))
 
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 10, 2, 1
 for i = 1, #pictures do
-  window:addChild(GUI.text(x, y, 0xC3C3C3, string.limit(pictures[i], width)))
-  window:addChild(GUI.framedButton(x, y + 1, width, 3, 0xC3C3C3, 0xC3C3C3, 0x880000, 0x880000, "Download")).onTouch = function()
+  window:addChild(GUI.text(x, y, 0x696969, string.limit(pictures[i], width)))
+  window:addChild(GUI.framedButton(x, y + 1, width, 3, 0x696969, 0x696969, 0x880000, 0x880000, "Download")).onTouch = function()
     local file = pictures[i] .. ".pic"
     
     GUI.alert("Russian: не вынимайте, интернет карту во время скачиваний, это пройдет 3 секунды. \nEnglish: do not remove the internet map during downloads, it will take 3 seconds.")
