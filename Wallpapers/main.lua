@@ -1,12 +1,13 @@
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.08"
+local Version = "1.09"
 local MineOSCore = require("MineOSCore")
+local buffer = require("doubleBuffering") -- нахрена? Дальше всем сам увидешь.
+local image = require("image")
 
-local pictures = {
+local pictures = { -- Список обоев.
   "Zemfira", -- хочешь, сладких апельсинов.
   "Tatu",
-  "Katya", --шлюха
   "WinterSunrise",
   "Nocturnal",
   "AhsokaTano",
@@ -74,9 +75,6 @@ local pictures = {
   "Omen", 
 }
 
---local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers "..Version, true))
---local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 135, 35))
-
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x3C3C3C))
 
 local progressIndicator = window:addChild(GUI.progressIndicator(140, 1, 0x4B4B4B, 0x00B640, 0x99FF80))
@@ -94,8 +92,14 @@ for i = 1, #pictures do
      
       mainContainer:drawOnScreen()
         loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-    GUI.alert("Russian: Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете " .. file, "\nEnglish: Loading is successfully! To put on your desktop, Settings -> wallpapers, choose " ..file)
-    progressIndicator.active = false
+      
+       buffer.drawImage(1, 1, image.load("/MineOS/Pictures/" ..file)) -- рисуем найух
+
+       
+         GUI.alert("Russian: Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете " .. file, "\nEnglish: Loading is successfully! To put on your desktop, Settings -> wallpapers, choose " ..file)
+      os.sleep(5.000) -- 
+    
+      progressIndicator.active = false
   end
 
   x = x + width + horizontalSpace
