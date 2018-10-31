@@ -1,6 +1,6 @@
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.09"
+local Version = "1.10"
 local MineOSCore = require("MineOSCore")
 local buffer = require("doubleBuffering") -- нахрена? Дальше всем сам увидешь.
 local image = require("image")
@@ -72,19 +72,21 @@ local pictures = { -- Список обоев.
   "Mojave",
   "Mojave_Night",
   "yosemite",
-  "Omen", 
+  "Omen",
+  "Helloween" 
 }
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x3C3C3C))
+local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x878787))
+window.backgroundPanel.colors.transparency = 0.2
 
-local progressIndicator = window:addChild(GUI.progressIndicator(140, 1, 0x4B4B4B, 0x00B640, 0x99FF80))
+local progressIndicator = window:addChild(GUI.progressIndicator(140, 1, 0x696969, 0x787878, 0xD2D2D2))
 
 
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 4, 10, 2, 1
 for i = 1, #pictures do
   window:addChild(GUI.text(x, y, 0xD2D2D2, string.limit(pictures[i], width)))
-  window:addChild(GUI.framedButton(x, y + 1, width, 3, 0xD2D2D2, 0xD2D2D2, 0x880000, 0x880000, "Download")).onTouch = function()
+  window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0xB4B4B4, 0x555555, 0x880000, 0xB4B4B4, "Download")).onTouch = function()
     local file = pictures[i] .. ".pic"
     
     GUI.alert("Russian: не вынимайте, интернет карту во время скачиваний, это пройдет 3 секунды. \nEnglish: do not remove the internet map during downloads, it will take 3 seconds.")
