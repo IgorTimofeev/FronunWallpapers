@@ -73,15 +73,18 @@ local pictures = { -- Список обоев.
   "Mojave_Night",
   "yosemite",
   "Omen",
-  "Helloween" 
+  "Helloween",
 }
 
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x878787))
 window.backgroundPanel.colors.transparency = 0.2
-
+mainContainer.menu:addItem("language").onTouch = function()
+local container = GUI.addBackgroundContainer(mainContainer, true, true, "Soon.. Скоро.. ")
+end
+mainContainer.menu:addItem("Author").onTouch = function()
+ local container = GUI.addBackgroundContainer(mainContainer, true, true, "ENG: Author: Fronun. (Helped: MineCR, ECS) RUS: Автор: Fronun. (Помогли: MineCR, ECS) Github: https://github.com/Fronun")
+ end
 local progressIndicator = window:addChild(GUI.progressIndicator(140, 1, 0x696969, 0x787878, 0xD2D2D2))
-
-
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 4, 10, 2, 1
 for i = 1, #pictures do
