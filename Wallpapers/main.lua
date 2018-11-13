@@ -1,6 +1,6 @@
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.10"
+local Version = "1.11"
 local MineOSCore = require("MineOSCore")
 local buffer = require("doubleBuffering") -- нахрена? Дальше всем сам увидешь.
 local image = require("image")
