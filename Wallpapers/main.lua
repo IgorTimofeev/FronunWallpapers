@@ -1,12 +1,15 @@
 local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
-local Version = "1.11"
+local Version = "1.12"
 local MineOSCore = require("MineOSCore")
 local buffer = require("doubleBuffering") -- нахрена? Дальше всем сам увидешь.
 local image = require("image")
+local computer = require("computer")
+
+local resourcesPath = MineOSCore.getCurrentScriptDirectory()
+local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/")
 
 local pictures = { -- Список обоев.
-  "Zemfira", -- хочешь, сладких апельсинов.
   "Tatu",
   "WinterSunrise",
   "Nocturnal",
@@ -40,8 +43,8 @@ local pictures = { -- Список обоев.
   "Linux",
   "Code",
   "Anonumys", -- анонимус, отсосимус!
-  "MineCraft", --МАЙНКРАФТ ЭТО МОЯ ЖИЗНЬ!!!!!
-  "Apple", --корпорация зла.
+  "MineCraft", 
+  "Apple", 
   "Trap_nation",
   "Ryzen",
   "Ryazan",
@@ -61,10 +64,10 @@ local pictures = { -- Список обоев.
   "Strawberry_cocktail",
   "Matrix",
   "Intel_Inside",
-  "Rammstein", -- ну, норм я ниче не могу сказать.
-  "Google", -- корпорация добра
+  "Rammstein", 
+  "Google", 
   "TED",
-  "Little_big", -- скпибиди папапа бум бум айс.
+  "Little_big",  
   "Yandex",
   "Cat",
   "Sea-Night",
@@ -74,35 +77,37 @@ local pictures = { -- Список обоев.
   "yosemite",
   "Omen",
   "Helloween",
+  "NewYork",
+  "Sunset",
+  "CalfMountains",
 }
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x878787))
+local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x4B4B4B))
+
 window.backgroundPanel.colors.transparency = 0.2
-mainContainer.menu:addItem("language").onTouch = function()
-local container = GUI.addBackgroundContainer(mainContainer, true, true, "Soon.. Скоро.. ")
-end
-mainContainer.menu:addItem("Author").onTouch = function()
- local container = GUI.addBackgroundContainer(mainContainer, true, true, "ENG: Author: Fronun. (Helped: MineCR, ECS) RUS: Автор: Fronun. (Помогли: MineCR, ECS) Github: https://github.com/Fronun")
+
+mainContainer.menu:addItem(localization.author).onTouch = function()
+ local container = GUI.addBackgroundContainer(mainContainer, true, true, localization.author1)
  end
 local progressIndicator = window:addChild(GUI.progressIndicator(140, 1, 0x696969, 0x787878, 0xD2D2D2))
 
-local x, y, width, horizontalSpace, verticalSpace = 3, 4, 10, 2, 1
+local x, y, width, horizontalSpace, verticalSpace = 3, 4, 9, 2, 1
 for i = 1, #pictures do
   window:addChild(GUI.text(x, y, 0xD2D2D2, string.limit(pictures[i], width)))
-  window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0xB4B4B4, 0x555555, 0x880000, 0xB4B4B4, "Download")).onTouch = function()
+  window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0x969696, 0xE1E1E1, 0x696969, 0x969696, localization.download)).onTouch = function()
     local file = pictures[i] .. ".pic"
     
-    GUI.alert("Russian: не вынимайте, интернет карту во время скачиваний, это пройдет 3 секунды. \nEnglish: do not remove the internet map during downloads, it will take 3 seconds.")
+    GUI.alert(localization.alert0)
      progressIndicator.active = true
      
       mainContainer:drawOnScreen()
         loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-      
+      computer.beep() -- пипип нахуй :)
        buffer.drawImage(1, 1, image.load("/MineOS/Pictures/" ..file)) -- рисуем найух
 
        
-         GUI.alert("Russian: Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете " .. file, "\nEnglish: Loading is successfully! To put on your desktop, Settings -> wallpapers, choose " ..file)
-      os.sleep(5.000) -- 
+         GUI.alert(localization.alert1 ..file)
+      os.sleep(3.000)
     
       progressIndicator.active = false
   end
@@ -114,4 +119,11 @@ for i = 1, #pictures do
   end
 end
 
+
+window.onResize = function(width, height)
+  window.backgroundPanel.width = width
+  window.backgroundPanel.height = height
+end
+
+window:resize(window.width, window.height)
 mainContainer:drawOnScreen()
