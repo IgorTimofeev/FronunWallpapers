@@ -1,6 +1,6 @@
 {
 download = "Download",
-warning = "ile Loading is successfully! To put on your desktop, Settings -> wallpapers, choose: "
+warning = "ile Loading is successfully! To put on your desktop, Settings -> wallpapers, choose: ",
 alert0 = "Do not remove the internet map during downloads, it will take 3 seconds.",
 alert1 = "File Loading is successfully! To put on your desktop, Settings -> wallpapers, choose: ",
 lan = "Language",
