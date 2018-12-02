@@ -87,6 +87,7 @@ local pictures = { -- Список обоев.
   "MIUI",
   "steam",
   "Urban",
+  "NewYear",
 }
 
 
