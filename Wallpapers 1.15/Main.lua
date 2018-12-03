@@ -92,7 +92,7 @@ local pictures = { -- Список обоев.
 
 
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 145, 35, 0x4B4B4B)) --  окно
+local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(3, 3, 145, 35, 0x4B4B4B)) --  окно
 
 
 window.backgroundPanel.colors.transparency = 0.4 -- прозрачность окна
