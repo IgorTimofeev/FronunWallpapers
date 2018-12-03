@@ -109,7 +109,7 @@ end
 --   
 -- end
 
-local x, y, width, horizontalSpace, verticalSpace = 3, 4, 9, 2, 1 -- я тут ничёрта не пойму.
+local x, y, width, horizontalSpace, verticalSpace = 2, 2, 8, 2, 1 -- я тут ничёрта не пойму.
 for i = 1, #pictures do
   window:addChild(GUI.text(x, y, 0xD2D2D2, string.limit(pictures[i], width))) -- название обоины.
   window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0x969696, 0xE1E1E1, 0x696969, 0x969696, localization.download)).onTouch = function() -- кнопка скачать
