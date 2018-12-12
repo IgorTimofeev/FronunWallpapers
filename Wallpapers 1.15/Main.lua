@@ -4,6 +4,7 @@ local GUI = require("GUI")
 local MineOSInterface = require("MineOSInterface")
 local MineOSCore = require("MineOSCore")
 local computer = require("computer")
+local fs = require("filesystem") -- опа, что то новое будет.
 -- указываем локализацию (языки)
 local resourcesPath = MineOSCore.getCurrentScriptDirectory()
 local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/")
@@ -88,12 +89,14 @@ local pictures = { -- Список обоев.
   "steam",
   "Urban",
   "NewYear",
+  "acer",
+  "vaio",
+  "xbox360",
 }
 
 
 
 local mainContainer, window = MineOSInterface.addWindow(GUI.filledWindow(3, 3, 145, 35, 0x4B4B4B)) --  окно
-
 
 window.backgroundPanel.colors.transparency = 0.4 -- прозрачность окна
 
@@ -101,22 +104,15 @@ window.backgroundPanel.colors.transparency = 0.4 -- прозрачность о�
 mainContainer.menu:addItem(localization.author).onTouch = function() -- вкладка "Автор"
  local container = GUI.addBackgroundContainer(mainContainer, true, true, localization.author1) -- тут все понятно..
 end
- 
--- ой да пошло, все в пизду.
--- mainContainer.menu:addItem(localization.settings).onTouch = function()
---   local container = GUI.addBackgroundContainer(mainContainer, true, true, localization.settings)
---   container.layout:addChild(GUI.switchAndLabel(1, 1, 50, 8, 0x66DB80, 0x5A5A5A, 0xE1E1E1, 0x5A5A5A, localization.full, false));
---   
--- end
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 8, 2, 1 -- я тут ничёрта не пойму.
 for i = 1, #pictures do
   window:addChild(GUI.text(x, y, 0xD2D2D2, string.limit(pictures[i], width))) -- название обоины.
   window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0x969696, 0xE1E1E1, 0x696969, 0x969696, localization.download)).onTouch = function() -- кнопка скачать
-    local file = pictures[i] .. ".pic" -- для чего то. 
+    local file = pictures[i] .. ".pic"  
     
         loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-      computer.beep() -- пипип нахуй :)
+      computer.beep() 
       
       os.sleep(1.000)
     local container = GUI.addBackgroundContainer(mainContainer, true, true, localization.warning ..file)
@@ -129,14 +125,5 @@ for i = 1, #pictures do
 
   end
 end
-
--- вернул ресив, хорошо что использую гитхаб.
-window.onResize = function(width, height) -- делаем чтобы юзер мог сделать окно полным.
-  window.backgroundPanel.width = width
-  window.backgroundPanel.height = height
-  
-end
-
-window:resize(window.width, window.height)
 
 mainContainer:drawOnScreen()
