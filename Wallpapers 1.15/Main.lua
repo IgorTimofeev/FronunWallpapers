@@ -102,7 +102,7 @@ end
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 8, 2, 1 
 for i = 1, #pictures do
-  window:addChild(GUI.text(x, y, 0xD2D2D2, string.limit(pictures[i], width))) -- название обоины.
+  window:addChild(GUI.text(x, y, 0x878787, string.limit(pictures[i], width))) -- название обоины.
   window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0x969696, 0xE1E1E1, 0x696969, 0x969696, localization.download)).onTouch = function() -- кнопка скачать
     local file = pictures[i] .. ".pic"  
     
