@@ -128,4 +128,4 @@ window.onResize = function(width, height)
 window:resize(window.width, window.height)
 
 
-mainContainer:drawOnScreen()
+application:drawOnScreen()
