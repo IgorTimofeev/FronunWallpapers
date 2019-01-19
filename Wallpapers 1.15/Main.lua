@@ -1,13 +1,13 @@
 -- 1.15
 -- подключаем библеотеку.
 local GUI = require("GUI")
-local MineOSInterface = require("MineOSInterface")
-local MineOSCore = require("MineOSCore")
-local computer = require("computer")
-local fs = require("filesystem") -- опа, что то новое будет.
+local system = require("System")
+local text = require("Text")
+local internet = require("Internet")
+local paths = require("Paths")
+local fs = require("Filesystem") -- опа, что то новое будет.
 -- указываем локализацию (языки)
-local resourcesPath = MineOSCore.getCurrentScriptDirectory()
-local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/")
+local localization = system.getCurrentScriptLocalization()
 
 local pictures = { -- Список обоев.
   "Tatu",
@@ -94,29 +94,25 @@ local pictures = { -- Список обоев.
   "xbox360",
 }
 
-local application, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers", false)) --  окно
+local workspace, window, menu = system.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers", false)) --  окно
 
-application.menu:addItem(localization.author).onTouch = function() -- вкладка "Автор"
- local container = GUI.addBackgroundContainer(application, true, true, localization.author1) -- тут все понятно..
+menu:addItem(localization.author).onTouch = function() -- вкладка "Автор"
+ local container = GUI.addBackgroundContainer(workspace, true, true, localization.author1) -- тут все понятно..
 end
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 8, 2, 1 
 for i = 1, #pictures do
-  window:addChild(GUI.text(x, y, 0x878787, string.limit(pictures[i], width))) -- название обоины.
+  window:addChild(GUI.text(x, y, 0x878787, text.limit(pictures[i], width))) -- название обоины.
   window:addChild(GUI.roundedButton(x, y + 1, width, 3, 0x969696, 0xE1E1E1, 0x696969, 0x969696, localization.download)).onTouch = function() -- кнопка скачать
     local file = pictures[i] .. ".pic"  
-    
-        loadfile("/bin/wget.lua")("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, "/MineOS/Pictures/" .. file, "-FQ")
-      computer.beep() 
-      os.sleep(1.000)
-    GUI.alert(localization.warning ..file)
-      
+    internet.download("https://github.com/Fronun/Wallpapers/raw/master/wall/" .. file, paths.system.pictures .. file)
+    computer.beep() 
+    GUI.alert(localization.warning .. file)
   end
 
   x = x + width + horizontalSpace
   if x + width > window.width then
     x, y = 3, y + verticalSpace + 4
-
   end
 end
 
@@ -128,4 +124,4 @@ window.onResize = function(width, height)
 window:resize(window.width, window.height)
 
 
-application:draw()
+workspace:draw()
