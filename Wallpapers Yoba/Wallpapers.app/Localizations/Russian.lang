@@ -1,0 +1,9 @@
+{
+download = "Скачать",
+lan  = "Язык",
+author = "Автор",
+author1 = "Автор: Fronun. (Помогли: MineCR, ECS) Github: https://github.com/Fronun",
+warning = "Загрузка завершена! Чтобы поставить на рабочий стол, Settings -> обои и заставка, выбираете: ",
+settings = "Настройки",
+full = "возможность полноэкранного окна. (тест)",
+}
